@@ -8,12 +8,26 @@ namespace Singleton
 {
     class Garage
     {
+        public int sumCar;
+        
+        static Garage carHouse;
         private Garage()
         {
             Console.WriteLine("Создание гаража");
-
         }
 
-        Garage carhouse = new Garage();
+        public static Garage GetInstance()
+        {
+            if (carHouse == null)
+            {
+                carHouse = new Garage();
+            }
+            return carHouse;
+        }
+
+        public void AddCar(Car car)
+        {
+            Console.WriteLine("мими");
+        }
     }
 }
